@@ -1,0 +1,45 @@
+<!-- author:Sole_idol -->
+<!-- filename: test.html -->
+<!-- datetime:2020/8/17 21:12 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        li span{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<p>{{ stu.name }}今年{{ stu.age }}岁了</p>
+<p>学生行为：{{ stu.look() }}</p>
+<p>{{ dict[0]['name'] }}今年{{ dict[0]['age'] }}岁了</p>
+<p>漂亮小姐姐有：{{ dict }}</p>
+{% if stu.age > 18 %}
+    <p>{{ stu.name }}已经是成年人了，可以看好看的小姐姐</p>
+{% elif stu.age >=0 %}
+    <p>{{ stu.name }}还没成年，小姐姐不会介意</p>
+{% else %}
+    <p>你是个什么鬼？？？</p>
+{% endif %}
+<h4>英雄列表：</h4>
+<ul>
+    {% for s in dict %}
+        <li>英雄：{{ s.name }}，年龄：{{ s.age }}</li>
+        <li style="text-indent: 10px">
+            <span>loop.index --> {{ loop.index }}</span>
+            <span>loop.index0 --> {{ loop.index0 }}</span>
+            <span>loop.revindex --> {{ loop.revindex }}</span>
+            <span>loop.revindex0 --> {{ loop.revindex0 }}</span>
+            <span>loop.first --> {{ loop.first }}</span>
+            <span>loop.last --> {{ loop.last }}</span>
+            <span>loop.length --> {{ loop.length }}</span>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

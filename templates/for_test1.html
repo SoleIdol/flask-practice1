@@ -1,0 +1,25 @@
+<!-- author:Sole_idol -->
+<!-- filename: for_test1.html -->
+<!-- datetime:2020/8/18 11:38 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for 循环测试</title>
+</head>
+<body>
+<div>
+    <h1>今日菜单</h1>
+    <ul>
+        {% for i in menu %}
+            <li>{{ i }}</li>
+        {% else %}
+{# 这和python中有些区别，这里是当遍历的对象为空时，执行else语句，其他自然死亡不会执行，#}
+{#            而Python中是，遇到break不会执行，而遍历完等自然死亡，会执行#}
+            <li>今天厨师休息，不做饭</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
